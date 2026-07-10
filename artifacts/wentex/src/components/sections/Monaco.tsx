@@ -131,18 +131,16 @@ export function Monaco() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.35 }}
-                className="aspect-square bg-[#152034] p-8 flex flex-col justify-between border border-white/5"
+                className="aspect-square bg-[#1A2840] overflow-hidden relative group"
               >
-                <motion.span
-                  className="text-5xl text-primary font-serif"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  M.
-                </motion.span>
-                <p className="text-sm text-white/50 tracking-wide font-light">
-                  A commitment to the art of presentation.
-                </p>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/slim.jpg`}
+                  alt="Monaco slim-fit shirt"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#0E1928]/80 to-transparent">
+                  <span className="text-xs tracking-[0.25em] uppercase text-white/60">Slim Fit</span>
+                </div>
               </motion.div>
             </div>
           </div>
