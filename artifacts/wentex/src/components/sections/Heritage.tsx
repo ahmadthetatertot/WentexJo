@@ -1,26 +1,41 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
+function AnimatedCounter({ target, suffix = "", from = 0 }: { target: number; suffix?: string; from?: number }) {
+  const [count, setCount] = useState(from);
+  const [triggered, setTriggered] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    if (!inView) return;
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTriggered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!triggered) return;
     const duration = 1600;
     const steps = 60;
-    const increment = target / steps;
-    let current = 0;
+    const increment = (target - from) / steps;
     let step = 0;
     const timer = setInterval(() => {
       step++;
-      current = Math.min(Math.round(increment * step), target);
-      setCount(current);
-      if (current >= target) clearInterval(timer);
+      const next = Math.min(Math.round(from + increment * step), target);
+      setCount(next);
+      if (next >= target) clearInterval(timer);
     }, duration / steps);
     return () => clearInterval(timer);
-  }, [inView, target]);
+  }, [triggered, target, from]);
 
   return (
     <span ref={ref}>
@@ -31,9 +46,9 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
 }
 
 const stats = [
-  { value: 1967, label: "Established", suffix: "" },
-  { value: 57, label: "Years of Mastery", suffix: "+" },
-  { value: 6, label: "Premium Lines", suffix: "" },
+  { value: 1967, label: "Established", suffix: "", from: 1900 },
+  { value: 57, label: "Years of Mastery", suffix: "+", from: 0 },
+  { value: 6, label: "Premium Lines", suffix: "", from: 0 },
 ];
 
 export function HeritageStrip() {
@@ -53,7 +68,7 @@ export function HeritageStrip() {
                   className="flex flex-col min-w-max"
                 >
                   <span className="text-3xl md:text-4xl font-serif text-[#0E1928] mb-1 tabular-nums">
-                    <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                    <AnimatedCounter target={stat.value} suffix={stat.suffix} from={stat.from} />
                   </span>
                   <span className="text-xs tracking-[0.2em] uppercase text-[#0E1928]/50">{stat.label}</span>
                 </motion.div>
