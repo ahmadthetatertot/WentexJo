@@ -1,90 +1,191 @@
-import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const products = [
   {
     id: "formal",
     title: "Formal Shirts",
-    desc: "Impeccable Oxford and broadcloth essentials.",
-    image: "formal.jpg"
+    desc: "Impeccable Oxford and broadcloth essentials for boardroom distinction.",
+    image: "formal.jpg",
   },
   {
     id: "slim",
     title: "Slim Fit",
-    desc: "Modern cuts tailored for a sharp silhouette.",
-    image: "slim.jpg"
+    desc: "Modern cuts tailored for a sharp, contemporary silhouette.",
+    image: "slim.jpg",
   },
   {
     id: "tuxedo",
     title: "Tuxedo & Luxury",
     desc: "Elevated eveningwear for monumental occasions.",
-    image: "tuxedo.jpg"
+    image: "tuxedo.jpg",
   },
   {
     id: "school",
     title: "School Uniforms",
-    desc: "Durable, crisp whites designed for daily wear.",
-    image: "school.jpg"
+    desc: "Durable, crisp shirts designed for daily academic wear.",
+    image: "school.jpg",
   },
   {
     id: "security",
-    title: "Security & Protective",
-    desc: "Authoritative, rugged apparel for forces.",
-    image: "security.jpg"
+    title: "Jordanian Security Uniforms",
+    desc: "Purpose-built uniform shirts trusted by the Jordan Armed Forces, police, and civil security institutions.",
+    image: "security.jpg",
   },
   {
     id: "casual",
     title: "Everyday Casual",
-    desc: "Relaxed sophistication in earth tones.",
-    image: "casual.jpg"
-  }
+    desc: "Relaxed sophistication crafted for comfort and style.",
+    image: "casual.jpg",
+  },
 ];
+
+function TiltCard({ children }: { children: React.ReactNode }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [6, -6]), { stiffness: 300, damping: 30 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-6, 6]), { stiffness: 300, damping: 30 });
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    x.set(px);
+    y.set(py);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+    setHovered(false);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={handleMouseLeave}
+      whileHover={{ z: 10 }}
+      className="cursor-pointer"
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
 export function Products() {
   return (
-    <section id="products" className="py-24 md:py-32 bg-[#0A0A0A]">
+    <section id="products" className="py-24 md:py-32 bg-[#FAF8F4]">
       <div className="container mx-auto px-6 md:px-12">
-        
+
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="max-w-2xl">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-primary mb-6">Our Collections</h2>
-            <p className="text-4xl md:text-5xl font-serif text-white leading-tight">
-              Crafted for every institution, <br className="hidden md:block"/> designed for every individual.
-            </p>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="w-10 h-[2px] bg-primary mb-5 origin-left"
+            />
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="text-xs tracking-[0.3em] uppercase text-primary mb-5"
+            >
+              Our Collections
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-4xl md:text-5xl font-serif text-[#0E1928] leading-tight"
+            >
+              Crafted for every institution,{" "}
+              <br className="hidden md:block" />
+              designed for every individual.
+            </motion.h2>
           </div>
-          <p className="text-white/50 text-sm md:text-base max-w-sm md:text-right">
-            From the boardroom to the academy, our comprehensive lines deliver uncompromising quality across all sectors.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-[#0E1928]/50 text-sm md:text-base max-w-sm md:text-right font-light"
+          >
+            From the boardroom to the academy, our comprehensive lines deliver
+            uncompromising quality across all sectors.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {products.map((product, index) => (
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              key={product.id}
-              className="group relative flex flex-col gap-5 cursor-pointer"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#111111]">
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
-                <img 
-                  src={`${import.meta.env.BASE_URL}images/${product.image}`} 
-                  alt={product.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  <ArrowUpRight className="w-5 h-5 text-white" />
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          {products.map((product) => (
+            <motion.div key={product.id} variants={itemVariants}>
+              <TiltCard>
+                <div className="group relative flex flex-col gap-5">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-[#EDE8E0]">
+                    <motion.img
+                      src={`${import.meta.env.BASE_URL}images/${product.image}`}
+                      alt={product.title}
+                      className="w-full h-full object-cover object-center"
+                      whileHover={{ scale: 1.07 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    />
+                    <div className="absolute inset-0 bg-[#0E1928]/10 group-hover:bg-transparent transition-colors duration-300 z-10" />
+                    <motion.div
+                      className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center"
+                      initial={{ opacity: 0, scale: 0.7 }}
+                      whileHover={{ opacity: 1, scale: 1 }}
+                      animate={{ opacity: 0 }}
+                      whileInView={{ opacity: 0 }}
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-[#0E1928]" />
+                    </motion.div>
+                    <div className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 text-[#0E1928]" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-serif text-[#0E1928] mb-2 group-hover:text-primary transition-colors duration-200">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm text-[#0E1928]/50 leading-relaxed font-light">{product.desc}</p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-serif text-white mb-2 group-hover:text-primary transition-colors">{product.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{product.desc}</p>
-              </div>
+              </TiltCard>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>
