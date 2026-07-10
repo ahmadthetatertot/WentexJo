@@ -72,7 +72,7 @@ export function Navbar() {
             <img
               src={logoSrc}
               alt="Wentex Logo"
-              className={`h-8 md:h-10 object-contain transition-all duration-300 ${
+              className={`h-10 md:h-14 object-contain transition-all duration-300 ${
                 isScrolled ? "opacity-90 group-hover:opacity-100" : "invert opacity-90 group-hover:opacity-100"
               }`}
             />
