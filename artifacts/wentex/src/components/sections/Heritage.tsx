@@ -49,8 +49,8 @@ function AnimatedCounter({ target, suffix = "", from = 0 }: { target: number; su
 export function HeritageStrip() {
   const { t } = useLanguage();
   const stats = [
-    { value: 1967, labelKey: "heritage.established", suffix: "", from: 1900 },
-    { value: 57, labelKey: "heritage.years", suffix: "+", from: 0 },
+    { value: 1957, labelKey: "heritage.established", suffix: "", from: 1900 },
+    { value: 69, labelKey: "heritage.years", suffix: "+", from: 0 },
     { value: 6, labelKey: "heritage.lines", suffix: "", from: 0 },
   ];
   return (

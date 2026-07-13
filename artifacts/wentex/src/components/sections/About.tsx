@@ -70,7 +70,7 @@ export function About() {
                 className="absolute -left-6 -bottom-6 lg:-left-12 lg:-bottom-12 w-32 h-32 lg:w-48 lg:h-48 bg-primary p-6 lg:p-8 flex items-center justify-center"
               >
                 <div className="text-center">
-                  <span className="block text-4xl lg:text-5xl font-serif text-white mb-2">60</span>
+                  <span className="block text-4xl lg:text-5xl font-serif text-white mb-2">69</span>
                   <span className="block text-[10px] tracking-widest uppercase text-white/70">{t("about.badge.years")}</span>
                 </div>
               </motion.div>

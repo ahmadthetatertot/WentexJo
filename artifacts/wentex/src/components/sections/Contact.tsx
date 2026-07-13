@@ -23,7 +23,7 @@ export function Contact() {
       title: t("contact.phones.title"),
       content: (
         <div className="space-y-2 text-[#0E1928]/55 font-light">
-          <a href="tel:+962788004400" className="block hover:text-primary transition-colors">+962 78 800 4400</a>
+          <a href="tel:+962788000095" className="block hover:text-primary transition-colors">+962 78 800 0095</a>
           <a href="tel:+962795500756" className="block hover:text-primary transition-colors">+962 79 550 0756</a>
           <a href="tel:+96264630526" className="block hover:text-primary transition-colors">+962 6 463 0526</a>
         </div>
@@ -141,7 +141,7 @@ export function Contact() {
               <div className="mt-8 pt-8 border-t border-[#0E1928]/8 text-center">
                 <span className="block text-xs uppercase tracking-widest text-[#0E1928]/40 mb-4">{t("contact.form.orReach")}</span>
                 <a
-                  href="https://wa.me/962788004400"
+                  href="https://wa.me/962788000095"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 w-full py-4 bg-[#25D366]/8 text-[#25D366] text-sm tracking-widest uppercase hover:bg-[#25D366]/15 transition-colors border border-[#25D366]/25"

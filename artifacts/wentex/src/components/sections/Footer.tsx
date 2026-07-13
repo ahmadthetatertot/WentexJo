@@ -50,7 +50,7 @@ export function Footer() {
               <h5 className="text-white font-medium uppercase tracking-widest text-xs mb-6">{t("footer.contact.title")}</h5>
               <div className="flex flex-col gap-3 text-sm text-white/40 font-light">
                 <span>{t("footer.contact.location")}</span>
-                <a href="tel:+962788004400" className="hover:text-primary transition-colors">+962 78 800 4400</a>
+                <a href="tel:+962788000095" className="hover:text-primary transition-colors">+962 78 800 0095</a>
                 <a href="mailto:info@wentex-jo.com" className="hover:text-primary transition-colors">info@wentex-jo.com</a>
               </div>
             </div>

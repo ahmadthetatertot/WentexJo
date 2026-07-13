@@ -19,10 +19,10 @@ const en: Dict = {
   "nav.monaco": "Monaco",
   "nav.cta": "Get in Touch",
 
-  "hero.eyebrow": "Amman, Jordan · Est. 1967",
+  "hero.eyebrow": "Amman, Jordan · Est. 1957",
   "hero.title1": "A legacy of",
   "hero.title2": "quiet precision.",
-  "hero.subtitle": "Since 1967, Wentex has defined the standard for premium shirts in the MENA region. Trusted by institutions, designed for distinction.",
+  "hero.subtitle": "Since 1957, Wentex has defined the standard for premium shirts in the MENA region. Trusted by institutions, designed for distinction.",
   "hero.cta1": "Explore Collections",
   "hero.cta2": "Our Heritage",
   "hero.scroll": "Scroll",
@@ -53,9 +53,9 @@ const en: Dict = {
   "product.casual.desc": "Relaxed sophistication crafted for comfort and style.",
 
   "about.eyebrow": "Our Heritage",
-  "about.title1": "60 years of",
+  "about.title1": "69 years of",
   "about.title2": "unbroken focus.",
-  "about.p1": "Founded in 1967 in Amman, Jordan, Wentex began with a simple premise: a well-made shirt is the foundation of professional life. As a family-owned enterprise, we haven't chased fleeting trends. We've spent six decades perfecting the stitch, the collar roll, and the durability of the fabrics we source.",
+  "about.p1": "Founded in 1957 in Amman, Jordan, Wentex began with a simple premise: a well-made shirt is the foundation of professional life. As a family-owned enterprise, we haven't chased fleeting trends. We've spent seven decades perfecting the stitch, the collar roll, and the durability of the fabrics we source.",
   "about.p2": "Today, Wentex operates a world-class manufacturing facility supplying formal wear, specialized uniforms, and everyday essentials to leading retailers, banks, government institutions, and security forces across the MENA region.",
   "about.p3": "We are not just a brand; we are the manufacturers. We control every aspect of production on our factory floor, ensuring the quiet confidence that comes from genuine quality.",
   "about.quote": "\u201cExcellence isn't an act, it's a daily habit on the factory floor.\u201d",
@@ -103,7 +103,7 @@ const en: Dict = {
   "contact.form.orReach": "Or reach out instantly",
   "contact.form.whatsapp": "WhatsApp Us",
 
-  "footer.tagline": "Premium shirt manufacturing, serving the MENA region with excellence since 1967.",
+  "footer.tagline": "Premium shirt manufacturing, serving the MENA region with excellence since 1957.",
   "footer.nav.title": "Navigation",
   "footer.nav.home": "Home",
   "footer.nav.collections": "Collections",
@@ -113,7 +113,7 @@ const en: Dict = {
   "footer.contact.title": "Contact",
   "footer.contact.location": "Amman, Jordan",
   "footer.rights": "All rights reserved.",
-  "footer.estLine": "Amman, Jordan \u00b7 Est. 1967",
+  "footer.estLine": "Amman, Jordan \u00b7 Est. 1957",
 };
 
 const ar: Dict = {
@@ -123,10 +123,10 @@ const ar: Dict = {
   "nav.monaco": "موناكو",
   "nav.cta": "تواصل معنا",
 
-  "hero.eyebrow": "عمّان، الأردن · تأسست 1967",
+  "hero.eyebrow": "عمّان، الأردن · تأسست 1957",
   "hero.title1": "إرث من",
   "hero.title2": "الدقة الهادئة.",
-  "hero.subtitle": "منذ عام 1967، حددت وينتكس معيار القمصان الفاخرة في منطقة الشرق الأوسط وشمال أفريقيا. موضع ثقة المؤسسات، ومصممة للتميّز.",
+  "hero.subtitle": "منذ عام 1957، حددت ونتكس معيار القمصان الفاخرة في منطقة الشرق الأوسط وشمال أفريقيا. موضع ثقة المؤسسات، ومصممة للتميّز.",
   "hero.cta1": "استكشف المجموعات",
   "hero.cta2": "تراثنا",
   "hero.scroll": "مرر للأسفل",
@@ -157,10 +157,10 @@ const ar: Dict = {
   "product.casual.desc": "أناقة مريحة صُنعت للراحة والأسلوب.",
 
   "about.eyebrow": "تراثنا",
-  "about.title1": "60 عاماً من",
+  "about.title1": "69 عاماً من",
   "about.title2": "التركيز المتواصل.",
-  "about.p1": "تأسست وينتكس عام 1967 في عمّان، الأردن، بمبدأ بسيط: القميص المصنوع بعناية هو أساس الحياة المهنية. كمؤسسة عائلية، لم نسعَ خلف الاتجاهات العابرة، بل قضينا ستة عقود في إتقان الغرزة، ودرزة الطوق، ومتانة الأقمشة التي نستوردها.",
-  "about.p2": "اليوم، تدير وينتكس منشأة تصنيع عالمية المستوى تُزوّد الملابس الرسمية، والأزياء الموحدة المتخصصة، والأساسيات اليومية لكبار تجار التجزئة والبنوك والمؤسسات الحكومية وقوات الأمن في منطقة الشرق الأوسط وشمال أفريقيا.",
+  "about.p1": "تأسست ونتكس عام 1957 في عمّان، الأردن، بمبدأ بسيط: القميص المصنوع بعناية هو أساس الحياة المهنية. كمؤسسة عائلية، لم نسعَ خلف الاتجاهات العابرة، بل قضينا سبعة عقود في إتقان الغرزة، ودرزة الطوق، ومتانة الأقمشة التي نستوردها.",
+  "about.p2": "اليوم، تدير ونتكس منشأة تصنيع عالمية المستوى تُزوّد الملابس الرسمية، والأزياء الموحدة المتخصصة، والأساسيات اليومية لكبار تجار التجزئة والبنوك والمؤسسات الحكومية وقوات الأمن في منطقة الشرق الأوسط وشمال أفريقيا.",
   "about.p3": "نحن لسنا مجرد علامة تجارية، بل نحن المصنّعون. نتحكم في كل جانب من جوانب الإنتاج على أرض المصنع، لنضمن الثقة الهادئة التي تأتي من الجودة الحقيقية.",
   "about.quote": "\u201cالتميّز ليس فعلاً عابراً، بل عادة يومية على أرض المصنع.\u201d",
   "about.badge.years": "سنوات",
@@ -207,7 +207,7 @@ const ar: Dict = {
   "contact.form.orReach": "أو تواصل معنا فوراً",
   "contact.form.whatsapp": "تواصل عبر واتساب",
 
-  "footer.tagline": "تصنيع قمصان فاخرة، نخدم منطقة الشرق الأوسط وشمال أفريقيا بامتياز منذ عام 1967.",
+  "footer.tagline": "تصنيع قمصان فاخرة، نخدم منطقة الشرق الأوسط وشمال أفريقيا بامتياز منذ عام 1957.",
   "footer.nav.title": "التنقل",
   "footer.nav.home": "الرئيسية",
   "footer.nav.collections": "المجموعات",
@@ -217,7 +217,7 @@ const ar: Dict = {
   "footer.contact.title": "التواصل",
   "footer.contact.location": "عمّان، الأردن",
   "footer.rights": "جميع الحقوق محفوظة.",
-  "footer.estLine": "عمّان، الأردن · تأسست 1967",
+  "footer.estLine": "عمّان، الأردن · تأسست 1957",
 };
 
 const fr: Dict = {
@@ -227,10 +227,10 @@ const fr: Dict = {
   "nav.monaco": "Monaco",
   "nav.cta": "Contactez-nous",
 
-  "hero.eyebrow": "Amman, Jordanie · Depuis 1967",
+  "hero.eyebrow": "Amman, Jordanie · Depuis 1957",
   "hero.title1": "Un héritage de",
   "hero.title2": "précision discrète.",
-  "hero.subtitle": "Depuis 1967, Wentex définit la référence des chemises haut de gamme dans la région MENA. Approuvée par les institutions, conçue pour la distinction.",
+  "hero.subtitle": "Depuis 1957, Wentex définit la référence des chemises haut de gamme dans la région MENA. Approuvée par les institutions, conçue pour la distinction.",
   "hero.cta1": "Découvrir les collections",
   "hero.cta2": "Notre héritage",
   "hero.scroll": "Défiler",
@@ -261,9 +261,9 @@ const fr: Dict = {
   "product.casual.desc": "Une sophistication détendue conçue pour le confort et le style.",
 
   "about.eyebrow": "Notre héritage",
-  "about.title1": "60 ans de",
+  "about.title1": "69 ans de",
   "about.title2": "concentration ininterrompue.",
-  "about.p1": "Fondée en 1967 à Amman, en Jordanie, Wentex est née d'une conviction simple : une chemise bien confectionnée est le fondement de la vie professionnelle. En tant qu'entreprise familiale, nous n'avons jamais suivi les tendances éphémères. Nous avons passé six décennies à perfectionner la couture, le roulé du col et la durabilité des tissus que nous choisissons.",
+  "about.p1": "Fondée en 1957 à Amman, en Jordanie, Wentex est née d'une conviction simple : une chemise bien confectionnée est le fondement de la vie professionnelle. En tant qu'entreprise familiale, nous n'avons jamais suivi les tendances éphémères. Nous avons passé sept décennies à perfectionner la couture, le roulé du col et la durabilité des tissus que nous choisissons.",
   "about.p2": "Aujourd'hui, Wentex exploite une installation de fabrication de classe mondiale, fournissant des tenues formelles, des uniformes spécialisés et des essentiels quotidiens aux principaux détaillants, banques, institutions gouvernementales et forces de sécurité de la région MENA.",
   "about.p3": "Nous ne sommes pas seulement une marque ; nous sommes les fabricants. Nous contrôlons chaque aspect de la production sur notre site, garantissant la confiance discrète qui découle d'une qualité authentique.",
   "about.quote": "\u00abL'excellence n'est pas un acte, c'est une habitude quotidienne sur le terrain de production.\u00bb",
@@ -311,7 +311,7 @@ const fr: Dict = {
   "contact.form.orReach": "Ou contactez-nous instantanément",
   "contact.form.whatsapp": "Nous écrire sur WhatsApp",
 
-  "footer.tagline": "Fabrication de chemises haut de gamme, au service de la région MENA avec excellence depuis 1967.",
+  "footer.tagline": "Fabrication de chemises haut de gamme, au service de la région MENA avec excellence depuis 1957.",
   "footer.nav.title": "Navigation",
   "footer.nav.home": "Accueil",
   "footer.nav.collections": "Collections",
@@ -321,7 +321,7 @@ const fr: Dict = {
   "footer.contact.title": "Contact",
   "footer.contact.location": "Amman, Jordanie",
   "footer.rights": "Tous droits réservés.",
-  "footer.estLine": "Amman, Jordanie · Depuis 1967",
+  "footer.estLine": "Amman, Jordanie · Depuis 1957",
 };
 
 const tr: Dict = {
@@ -331,10 +331,10 @@ const tr: Dict = {
   "nav.monaco": "Monaco",
   "nav.cta": "İletişime Geçin",
 
-  "hero.eyebrow": "Amman, Ürdün · 1967'den beri",
+  "hero.eyebrow": "Amman, Ürdün · 1957'den beri",
   "hero.title1": "Sessiz bir",
   "hero.title2": "hassasiyet mirası.",
-  "hero.subtitle": "1967'den bu yana Wentex, MENA bölgesinde premium gömlek standardını belirlemiştir. Kurumların güvendiği, ayrıcalık için tasarlanmış.",
+  "hero.subtitle": "1957'den bu yana Wentex, MENA bölgesinde premium gömlek standardını belirlemiştir. Kurumların güvendiği, ayrıcalık için tasarlanmış.",
   "hero.cta1": "Koleksiyonları Keşfet",
   "hero.cta2": "Mirasımız",
   "hero.scroll": "Kaydır",
@@ -365,9 +365,9 @@ const tr: Dict = {
   "product.casual.desc": "Konfor ve stil için tasarlanmış rahat sofistikelik.",
 
   "about.eyebrow": "Mirasımız",
-  "about.title1": "60 yıllık",
+  "about.title1": "69 yıllık",
   "about.title2": "kesintisiz odaklanma.",
-  "about.p1": "1967'de Amman, Ürdün'de kurulan Wentex, basit bir ilkeyle başladı: iyi yapılmış bir gömlek, profesyonel hayatın temelidir. Aile şirketi olarak geçici trendlerin ardından koşmadık. Dikişi, yaka kıvrımını ve tedarik ettiğimiz kumaşların dayanıklılığını mükemmelleştirmek için altı on yıl harcadık.",
+  "about.p1": "1957'de Amman, Ürdün'de kurulan Wentex, basit bir ilkeyle başladı: iyi yapılmış bir gömlek, profesyonel hayatın temelidir. Aile şirketi olarak geçici trendlerin ardından koşmadık. Dikişi, yaka kıvrımını ve tedarik ettiğimiz kumaşların dayanıklılığını mükemmelleştirmek için yetmiş yıl harcadık.",
   "about.p2": "Bugün Wentex, MENA bölgesindeki önde gelen perakendecilere, bankalara, devlet kurumlarına ve güvenlik güçlerine resmi giyim, özel üniformalar ve günlük ihtiyaçlar tedarik eden dünya standartlarında bir üretim tesisi işletiyor.",
   "about.p3": "Biz sadece bir marka değiliz; biziz üreticiler. Üretimin her yönünü fabrika sahasında kontrol ederek, gerçek kaliteden gelen sessiz güveni sağlıyoruz.",
   "about.quote": "\u201cMükemmellik bir eylem değil, fabrika sahasında günlük bir alışkanlıktır.\u201d",
@@ -415,7 +415,7 @@ const tr: Dict = {
   "contact.form.orReach": "Veya hemen bize ulaşın",
   "contact.form.whatsapp": "WhatsApp'tan Yazın",
 
-  "footer.tagline": "1967'den beri MENA bölgesine mükemmellikle hizmet veren premium gömlek üretimi.",
+  "footer.tagline": "1957'den beri MENA bölgesine mükemmellikle hizmet veren premium gömlek üretimi.",
   "footer.nav.title": "Gezinme",
   "footer.nav.home": "Ana Sayfa",
   "footer.nav.collections": "Koleksiyonlar",
@@ -425,7 +425,7 @@ const tr: Dict = {
   "footer.contact.title": "İletişim",
   "footer.contact.location": "Amman, Ürdün",
   "footer.rights": "Tüm hakları saklıdır.",
-  "footer.estLine": "Amman, Ürdün · 1967'den beri",
+  "footer.estLine": "Amman, Ürdün · 1957'den beri",
 };
 
 const he: Dict = {
@@ -435,10 +435,10 @@ const he: Dict = {
   "nav.monaco": "מונקו",
   "nav.cta": "צור קשר",
 
-  "hero.eyebrow": "עמאן, ירדן · הוקמה ב-1967",
+  "hero.eyebrow": "עמאן, ירדן · הוקמה ב-1957",
   "hero.title1": "מורשת של",
   "hero.title2": "דיוק שקט.",
-  "hero.subtitle": "מאז 1967, ונטקס מגדירה את הסטנדרט לחולצות פרימיום באזור המזרח התיכון וצפון אפריקה. מהימנה על ידי מוסדות, מעוצבת להצטיינות.",
+  "hero.subtitle": "מאז 1957, ונטקס מגדירה את הסטנדרט לחולצות פרימיום באזור המזרח התיכון וצפון אפריקה. מהימנה על ידי מוסדות, מעוצבת להצטיינות.",
   "hero.cta1": "גלה את הקולקציות",
   "hero.cta2": "המורשת שלנו",
   "hero.scroll": "גלול",
@@ -469,9 +469,9 @@ const he: Dict = {
   "product.casual.desc": "אלגנטיות רגועה שנוצרה לנוחות וסטייל.",
 
   "about.eyebrow": "המורשת שלנו",
-  "about.title1": "60 שנות",
+  "about.title1": "69 שנות",
   "about.title2": "מיקוד בלתי פוסק.",
-  "about.p1": "ונטקס נוסדה ב-1967 בעמאן, ירדן, מתוך הנחת יסוד פשוטה: חולצה עשויה היטב היא הבסיס לחיים המקצועיים. כעסק משפחתי, לא רדפנו אחרי מגמות חולפות. הקדשנו שישה עשורים לשיפור התפר, גלגול הצווארון ועמידות הבדים שאנו רוכשים.",
+  "about.p1": "ונטקס נוסדה ב-1957 בעמאן, ירדן, מתוך הנחת יסוד פשוטה: חולצה עשויה היטב היא הבסיס לחיים המקצועיים. כעסק משפחתי, לא רדפנו אחרי מגמות חולפות. הקדשנו שבעה עשורים לשיפור התפר, גלגול הצווארון ועמידות הבדים שאנו רוכשים.",
   "about.p2": "כיום, ונטקס מפעילה מתקן ייצור ברמה עולמית המספק ביגוד רשמי, מדים מיוחדים ומוצרי יומיום לרשתות קמעונאיות מובילות, בנקים, מוסדות ממשלתיים וכוחות אבטחה באזור המזרח התיכון וצפון אפריקה.",
   "about.p3": "אנחנו לא רק מותג; אנחנו היצרנים. אנו שולטים בכל היבט של הייצור ברצפת המפעל שלנו, ומבטיחים את הביטחון השקט הנובע מאיכות אמיתית.",
   "about.quote": "\u201cמצוינות אינה מעשה חד-פעמי, אלא הרגל יומיומי ברצפת המפעל.\u201d",
@@ -519,7 +519,7 @@ const he: Dict = {
   "contact.form.orReach": "או פנה אלינו מיידית",
   "contact.form.whatsapp": "כתבו לנו בוואטסאפ",
 
-  "footer.tagline": "ייצור חולצות פרימיום, בשירות אזור המזרח התיכון וצפון אפריקה במצוינות מאז 1967.",
+  "footer.tagline": "ייצור חולצות פרימיום, בשירות אזור המזרח התיכון וצפון אפריקה במצוינות מאז 1957.",
   "footer.nav.title": "ניווט",
   "footer.nav.home": "בית",
   "footer.nav.collections": "קולקציות",
@@ -529,7 +529,7 @@ const he: Dict = {
   "footer.contact.title": "צור קשר",
   "footer.contact.location": "עמאן, ירדן",
   "footer.rights": "כל הזכויות שמורות.",
-  "footer.estLine": "עמאן, ירדן · הוקמה ב-1967",
+  "footer.estLine": "עמאן, ירדן · הוקמה ב-1957",
 };
 
 const dictionaries: Record<LangCode, Dict> = { en, ar, fr, tr, he };
