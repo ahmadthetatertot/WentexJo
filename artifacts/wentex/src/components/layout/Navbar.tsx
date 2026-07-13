@@ -1,23 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-
-const LANGUAGES = [
-  { code: "EN", label: "English", dir: "ltr" },
-  { code: "AR", label: "العربية", dir: "rtl" },
-  { code: "FR", label: "Français", dir: "ltr" },
-  { code: "TR", label: "Türkçe", dir: "ltr" },
-  { code: "HE", label: "עברית", dir: "rtl" },
-];
+import { useLanguage, LANGUAGES, type LangCode } from "@/lib/i18n";
 
 export function Navbar() {
+  const { lang, setLang, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [activeLang, setActiveLang] = useState(LANGUAGES[0]);
   const langRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const activeLang = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -35,18 +29,16 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const selectLang = (lang: typeof LANGUAGES[0]) => {
-    setActiveLang(lang);
+  const selectLang = (code: LangCode) => {
+    setLang(code);
     setLangOpen(false);
-    document.documentElement.dir = lang.dir;
-    document.documentElement.lang = lang.code.toLowerCase();
   };
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Products", href: "#products" },
-    { name: "Monaco", href: "#monaco" },
+    { name: t("nav.home"), href: "#home" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.products"), href: "#products" },
+    { name: t("nav.monaco"), href: "#monaco" },
   ];
 
   const logoSrc = `${import.meta.env.BASE_URL}wentex-logo.png`;
@@ -106,7 +98,7 @@ export function Navbar() {
                   isScrolled ? "text-[#0E1928]/60 hover:text-[#0E1928]" : "text-white/60 hover:text-white"
                 }`}
               >
-                {activeLang.code}
+                {activeLang.code.toUpperCase()}
                 <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
               </button>
 
@@ -119,18 +111,18 @@ export function Navbar() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-3 w-40 bg-white border border-[#E3DDD4] shadow-lg overflow-hidden"
                   >
-                    {LANGUAGES.map((lang) => (
+                    {LANGUAGES.map((l) => (
                       <button
-                        key={lang.code}
-                        onClick={() => selectLang(lang)}
+                        key={l.code}
+                        onClick={() => selectLang(l.code)}
                         className={`w-full flex items-center justify-between px-4 py-3 text-sm transition-colors ${
-                          activeLang.code === lang.code
+                          activeLang.code === l.code
                             ? "bg-primary/5 text-primary"
                             : "text-[#0E1928]/70 hover:bg-[#FAF8F4] hover:text-[#0E1928]"
                         }`}
                       >
-                        <span className="font-medium tracking-wide">{lang.code}</span>
-                        <span className="text-xs opacity-70">{lang.label}</span>
+                        <span className="font-medium tracking-wide">{l.code.toUpperCase()}</span>
+                        <span className="text-xs opacity-70">{l.label}</span>
                       </button>
                     ))}
                   </motion.div>
@@ -143,7 +135,7 @@ export function Navbar() {
               href="#contact"
               className="relative px-6 py-2.5 bg-primary text-white text-sm font-medium tracking-wide uppercase overflow-hidden group"
             >
-              <span className="relative z-10">Get in Touch</span>
+              <span className="relative z-10">{t("nav.cta")}</span>
               <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
           </div>
@@ -197,24 +189,24 @@ export function Navbar() {
                 transition={{ delay: 0.2, duration: 0.3 }}
                 className="text-3xl font-serif text-primary"
               >
-                Contact
+                {t("nav.cta")}
               </motion.a>
             </nav>
 
             <div className="mt-auto pb-8">
               {/* Language picker in mobile */}
               <div className="flex flex-wrap gap-3 mb-10">
-                {LANGUAGES.map((lang) => (
+                {LANGUAGES.map((l) => (
                   <button
-                    key={lang.code}
-                    onClick={() => selectLang(lang)}
+                    key={l.code}
+                    onClick={() => selectLang(l.code)}
                     className={`px-3 py-1.5 text-xs tracking-widest uppercase border transition-colors ${
-                      activeLang.code === lang.code
+                      activeLang.code === l.code
                         ? "bg-primary text-white border-primary"
                         : "border-[#0E1928]/20 text-[#0E1928]/60 hover:border-primary hover:text-primary"
                     }`}
                   >
-                    {lang.code}
+                    {l.code.toUpperCase()}
                   </button>
                 ))}
               </div>

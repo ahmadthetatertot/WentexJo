@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Building2, Shield, GraduationCap, ShoppingBag, Hotel, Landmark } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const sectors = [
-  { name: "Financial Institutions", desc: "Corporate banking uniforms", Icon: Landmark },
-  { name: "Government Sectors", desc: "Official institutional wear", Icon: Building2 },
-  { name: "Jordanian Security Forces", desc: "Uniform shirts for police & armed forces", Icon: Shield },
-  { name: "Premium Retailers", desc: "Flagship formal collections", Icon: ShoppingBag },
-  { name: "Educational Academies", desc: "Standardized school wear", Icon: GraduationCap },
-  { name: "Hospitality Groups", desc: "Luxury service uniforms", Icon: Hotel },
+  { nameKey: "sector.financial.name", descKey: "sector.financial.desc", Icon: Landmark },
+  { nameKey: "sector.government.name", descKey: "sector.government.desc", Icon: Building2 },
+  { nameKey: "sector.security.name", descKey: "sector.security.desc", Icon: Shield },
+  { nameKey: "sector.retail.name", descKey: "sector.retail.desc", Icon: ShoppingBag },
+  { nameKey: "sector.education.name", descKey: "sector.education.desc", Icon: GraduationCap },
+  { nameKey: "sector.hospitality.name", descKey: "sector.hospitality.desc", Icon: Hotel },
 ];
 
 const containerVariants = {
@@ -26,6 +27,7 @@ const itemVariants = {
 };
 
 export function Clients() {
+  const { t } = useLanguage();
   return (
     <section className="py-24 bg-[#EDE8E0] border-y border-[#0E1928]/8">
       <div className="container mx-auto px-6 md:px-12">
@@ -44,7 +46,7 @@ export function Clients() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-xs tracking-[0.3em] uppercase text-primary mb-5"
           >
-            Trusted By Institutions
+            {t("clients.eyebrow")}
           </motion.p>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +55,7 @@ export function Clients() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl md:text-4xl font-serif text-[#0E1928]"
           >
-            The supplier of choice across the MENA region.
+            {t("clients.title")}
           </motion.h3>
         </div>
 
@@ -68,15 +70,15 @@ export function Clients() {
             const { Icon } = sector;
             return (
               <motion.div
-                key={sector.name}
+                key={sector.nameKey}
                 variants={itemVariants}
                 className="bg-[#FAF8F4] p-8 hover:bg-white transition-colors duration-200 group cursor-default"
               >
                 <div className="w-10 h-10 bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors duration-200">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
-                <h4 className="text-base text-[#0E1928] font-medium mb-2">{sector.name}</h4>
-                <p className="text-sm text-[#0E1928]/45 font-light">{sector.desc}</p>
+                <h4 className="text-base text-[#0E1928] font-medium mb-2">{t(sector.nameKey)}</h4>
+                <p className="text-sm text-[#0E1928]/45 font-light">{t(sector.descKey)}</p>
               </motion.div>
             );
           })}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n";
 
 function AnimatedCounter({ target, suffix = "", from = 0 }: { target: number; suffix?: string; from?: number }) {
   const [count, setCount] = useState(from);
@@ -45,13 +46,13 @@ function AnimatedCounter({ target, suffix = "", from = 0 }: { target: number; su
   );
 }
 
-const stats = [
-  { value: 1967, label: "Established", suffix: "", from: 1900 },
-  { value: 57, label: "Years of Mastery", suffix: "+", from: 0 },
-  { value: 6, label: "Premium Lines", suffix: "", from: 0 },
-];
-
 export function HeritageStrip() {
+  const { t } = useLanguage();
+  const stats = [
+    { value: 1967, labelKey: "heritage.established", suffix: "", from: 1900 },
+    { value: 57, labelKey: "heritage.years", suffix: "+", from: 0 },
+    { value: 6, labelKey: "heritage.lines", suffix: "", from: 0 },
+  ];
   return (
     <section className="border-y border-[#0E1928]/8 bg-[#EDE8E0] py-8 md:py-10 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
@@ -59,7 +60,7 @@ export function HeritageStrip() {
 
           <div className="flex items-center gap-10 md:gap-16 w-full md:w-auto overflow-x-auto no-scrollbar pb-4 md:pb-0 shrink-0">
             {stats.map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-10 md:gap-16">
+              <div key={stat.labelKey} className="flex items-center gap-10 md:gap-16">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +71,7 @@ export function HeritageStrip() {
                   <span className="text-3xl md:text-4xl font-serif text-[#0E1928] mb-1 tabular-nums">
                     <AnimatedCounter target={stat.value} suffix={stat.suffix} from={stat.from} />
                   </span>
-                  <span className="text-xs tracking-[0.2em] uppercase text-[#0E1928]/50">{stat.label}</span>
+                  <span className="text-xs tracking-[0.2em] uppercase text-[#0E1928]/50">{t(stat.labelKey)}</span>
                 </motion.div>
                 {i < stats.length - 1 && (
                   <div className="w-[1px] h-12 bg-[#0E1928]/15 hidden md:block" />
@@ -89,8 +90,8 @@ export function HeritageStrip() {
             className="flex-1 w-full text-center md:text-right"
           >
             <p className="text-sm md:text-base text-[#0E1928]/60 font-light tracking-wide max-w-xl ml-auto">
-              Proudly manufactured in <strong className="text-[#0E1928] font-medium">Jordan</strong>,
-              supplying the <strong className="text-[#0E1928] font-medium">MENA Region</strong> with uncompromising quality.
+              {t("heritage.tagline1")} <strong className="text-[#0E1928] font-medium">{t("heritage.tagline2")}</strong>
+              {t("heritage.tagline3")} <strong className="text-[#0E1928] font-medium">{t("heritage.tagline4")}</strong> {t("heritage.tagline5")}
             </p>
           </motion.div>
 

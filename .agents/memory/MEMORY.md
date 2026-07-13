@@ -1,0 +1,1 @@
+- [Wentex i18n system](wentex-i18n.md) — language switching lives in src/lib/i18n.tsx context+dictionaries, not per-component state.

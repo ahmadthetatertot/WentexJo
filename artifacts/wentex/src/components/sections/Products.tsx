@@ -1,44 +1,15 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const products = [
-  {
-    id: "formal",
-    title: "Formal Shirts",
-    desc: "Impeccable Oxford and broadcloth essentials for boardroom distinction.",
-    image: "formal.jpg",
-  },
-  {
-    id: "slim",
-    title: "Slim Fit",
-    desc: "Modern cuts tailored for a sharp, contemporary silhouette.",
-    image: "slim.jpg",
-  },
-  {
-    id: "tuxedo",
-    title: "Tuxedo & Luxury",
-    desc: "Elevated eveningwear for monumental occasions.",
-    image: "tuxedo.jpg",
-  },
-  {
-    id: "school",
-    title: "School Uniforms",
-    desc: "Durable, crisp shirts designed for daily academic wear.",
-    image: "school.jpg",
-  },
-  {
-    id: "security",
-    title: "Jordanian Security Uniforms",
-    desc: "Purpose-built uniform shirts trusted by the Jordan Armed Forces, police, and civil security institutions.",
-    image: "security.jpg",
-  },
-  {
-    id: "casual",
-    title: "Everyday Casual",
-    desc: "Relaxed sophistication crafted for comfort and style.",
-    image: "casual.jpg",
-  },
+  { id: "formal", titleKey: "product.formal.title", descKey: "product.formal.desc", image: "formal.jpg" },
+  { id: "slim", titleKey: "product.slim.title", descKey: "product.slim.desc", image: "slim.jpg" },
+  { id: "tuxedo", titleKey: "product.tuxedo.title", descKey: "product.tuxedo.desc", image: "tuxedo.jpg" },
+  { id: "school", titleKey: "product.school.title", descKey: "product.school.desc", image: "school.jpg" },
+  { id: "security", titleKey: "product.security.title", descKey: "product.security.desc", image: "security.jpg" },
+  { id: "casual", titleKey: "product.casual.title", descKey: "product.casual.desc", image: "casual.jpg" },
 ];
 
 function TiltCard({ children }: { children: React.ReactNode }) {
@@ -96,6 +67,7 @@ const itemVariants = {
 };
 
 export function Products() {
+  const { t } = useLanguage();
   return (
     <section id="products" className="py-24 md:py-32 bg-[#FAF8F4]">
       <div className="container mx-auto px-6 md:px-12">
@@ -116,7 +88,7 @@ export function Products() {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="text-xs tracking-[0.3em] uppercase text-primary mb-5"
             >
-              Our Collections
+              {t("products.eyebrow")}
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -125,9 +97,7 @@ export function Products() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-4xl md:text-5xl font-serif text-[#0E1928] leading-tight"
             >
-              Crafted for every institution,{" "}
-              <br className="hidden md:block" />
-              designed for every individual.
+              {t("products.title")}
             </motion.h2>
           </div>
           <motion.p
@@ -137,8 +107,7 @@ export function Products() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-[#0E1928]/50 text-sm md:text-base max-w-sm md:text-right font-light"
           >
-            From the boardroom to the academy, our comprehensive lines deliver
-            uncompromising quality across all sectors.
+            {t("products.subtitle")}
           </motion.p>
         </div>
 
@@ -156,7 +125,7 @@ export function Products() {
                   <div className="relative aspect-[3/4] overflow-hidden bg-[#EDE8E0]">
                     <motion.img
                       src={`${import.meta.env.BASE_URL}images/${product.image}`}
-                      alt={product.title}
+                      alt={t(product.titleKey)}
                       className="w-full h-full object-cover object-center"
                       whileHover={{ scale: 1.07 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -177,9 +146,9 @@ export function Products() {
                   </div>
                   <div>
                     <h3 className="text-xl font-serif text-[#0E1928] mb-2 group-hover:text-primary transition-colors duration-200">
-                      {product.title}
+                      {t(product.titleKey)}
                     </h3>
-                    <p className="text-sm text-[#0E1928]/50 leading-relaxed font-light">{product.desc}</p>
+                    <p className="text-sm text-[#0E1928]/50 leading-relaxed font-light">{t(product.descKey)}</p>
                   </div>
                 </div>
               </TiltCard>

@@ -1,8 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
-const words1 = ["A", "legacy", "of"];
-const words2 = ["quiet", "precision."];
+import { useLanguage } from "@/lib/i18n";
 
 function WordReveal({ words, delay = 0, italic = false }: { words: string[]; delay?: number; italic?: boolean }) {
   return (
@@ -28,8 +26,11 @@ function WordReveal({ words, delay = 0, italic = false }: { words: string[]; del
 }
 
 export function Hero() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLElement>(null);
   const imageSrc = `${import.meta.env.BASE_URL}images/hero.jpg`;
+  const words1 = t("hero.title1").split(" ");
+  const words2 = t("hero.title2").split(" ");
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -87,7 +88,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.1 }}
             />
             <span className="text-sm md:text-base tracking-[0.2em] uppercase text-primary font-medium">
-              Amman, Jordan · Est. 1967
+              {t("hero.eyebrow")}
             </span>
           </motion.div>
 
@@ -107,8 +108,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1.1 }}
             className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed mb-12 font-light"
           >
-            Since 1967, Wentex has defined the standard for premium shirts in the MENA region.
-            Trusted by institutions, designed for distinction.
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.div
@@ -121,14 +121,14 @@ export function Hero() {
               href="#products"
               className="relative px-8 py-4 bg-primary text-white text-sm tracking-[0.15em] uppercase overflow-hidden group inline-flex"
             >
-              <span className="relative z-10">Explore Collections</span>
+              <span className="relative z-10">{t("hero.cta1")}</span>
               <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
             <a
               href="#about"
               className="px-8 py-4 border border-white/30 text-white text-sm tracking-[0.15em] uppercase hover:bg-white/10 transition-colors inline-flex"
             >
-              Our Heritage
+              {t("hero.cta2")}
             </a>
           </motion.div>
         </div>
@@ -141,7 +141,7 @@ export function Hero() {
         transition={{ delay: 1.8, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
       >
-        <span className="text-xs tracking-[0.3em] uppercase text-white/50">Scroll</span>
+        <span className="text-xs tracking-[0.3em] uppercase text-white/50">{t("hero.scroll")}</span>
         <motion.div
           className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent"
           animate={{ scaleY: [1, 0.4, 1], opacity: [0.7, 0.3, 0.7] }}

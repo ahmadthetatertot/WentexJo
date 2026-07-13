@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n";
 
 export function Footer() {
+  const { t } = useLanguage();
   const logoSrc = `${import.meta.env.BASE_URL}wentex-logo.png`;
 
   return (
@@ -15,7 +17,7 @@ export function Footer() {
           >
             <img src={logoSrc} alt="Wentex" className="h-10 invert opacity-80 mb-6" />
             <p className="text-white/40 text-sm max-w-xs font-light leading-relaxed">
-              Premium shirt manufacturing, serving the MENA region with excellence since 1967.
+              {t("footer.tagline")}
             </p>
             <div className="mt-6">
               <div className="w-8 h-[1px] bg-primary mb-1" />
@@ -31,23 +33,23 @@ export function Footer() {
             className="flex gap-12"
           >
             <div>
-              <h5 className="text-white font-medium uppercase tracking-widest text-xs mb-6">Navigation</h5>
+              <h5 className="text-white font-medium uppercase tracking-widest text-xs mb-6">{t("footer.nav.title")}</h5>
               <div className="flex flex-col gap-3 text-sm text-white/40">
                 {[
-                  { label: "Home", href: "#home" },
-                  { label: "Collections", href: "#products" },
-                  { label: "Our Heritage", href: "#about" },
-                  { label: "Monaco Label", href: "#monaco" },
-                  { label: "Contact", href: "#contact" },
+                  { label: t("footer.nav.home"), href: "#home" },
+                  { label: t("footer.nav.collections"), href: "#products" },
+                  { label: t("footer.nav.heritage"), href: "#about" },
+                  { label: t("footer.nav.monaco"), href: "#monaco" },
+                  { label: t("footer.nav.contact"), href: "#contact" },
                 ].map(({ label, href }) => (
                   <a key={label} href={href} className="hover:text-primary transition-colors">{label}</a>
                 ))}
               </div>
             </div>
             <div>
-              <h5 className="text-white font-medium uppercase tracking-widest text-xs mb-6">Contact</h5>
+              <h5 className="text-white font-medium uppercase tracking-widest text-xs mb-6">{t("footer.contact.title")}</h5>
               <div className="flex flex-col gap-3 text-sm text-white/40 font-light">
-                <span>Amman, Jordan</span>
+                <span>{t("footer.contact.location")}</span>
                 <a href="tel:+962788004400" className="hover:text-primary transition-colors">+962 78 800 4400</a>
                 <a href="mailto:info@wentex-jo.com" className="hover:text-primary transition-colors">info@wentex-jo.com</a>
               </div>
@@ -56,8 +58,8 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/25 tracking-wide">
-          <p>&copy; {new Date().getFullYear()} Wentex. All rights reserved.</p>
-          <p>Amman, Jordan · Est. 1967</p>
+          <p>&copy; {new Date().getFullYear()} Wentex. {t("footer.rights")}</p>
+          <p>{t("footer.estLine")}</p>
         </div>
       </div>
     </footer>

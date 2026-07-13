@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n";
 
 export function About() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-24 md:py-32 bg-[#F5F0E8] border-t border-[#0E1928]/6">
       <div className="container mx-auto px-6 md:px-12">
@@ -20,21 +22,15 @@ export function About() {
                 transition={{ duration: 0.5 }}
                 className="w-10 h-[2px] bg-primary mb-5 origin-left"
               />
-              <h2 className="text-xs tracking-[0.3em] uppercase text-primary mb-5">Our Heritage</h2>
+              <h2 className="text-xs tracking-[0.3em] uppercase text-primary mb-5">{t("about.eyebrow")}</h2>
               <h3 className="text-4xl md:text-5xl font-serif text-[#0E1928] leading-tight mb-8">
-                60 years of <br /> unbroken focus.
+                {t("about.title1")} <br /> {t("about.title2")}
               </h3>
 
               <div className="space-y-6 text-[#0E1928]/60 font-light leading-relaxed">
-                <p>
-                  Founded in 1967 in Amman, Jordan, Wentex began with a simple premise: a well-made shirt is the foundation of professional life. As a family-owned enterprise, we haven't chased fleeting trends. We've spent six decades perfecting the stitch, the collar roll, and the durability of the fabrics we source.
-                </p>
-                <p>
-                  Today, Wentex operates a world-class manufacturing facility supplying formal wear, specialized uniforms, and everyday essentials to leading retailers, banks, government institutions, and security forces across the MENA region.
-                </p>
-                <p>
-                  We are not just a brand; we are the manufacturers. We control every aspect of production on our factory floor, ensuring the quiet confidence that comes from genuine quality.
-                </p>
+                <p>{t("about.p1")}</p>
+                <p>{t("about.p2")}</p>
+                <p>{t("about.p3")}</p>
               </div>
 
               <motion.div
@@ -45,7 +41,7 @@ export function About() {
                 className="mt-12 pt-12 border-t border-[#0E1928]/10"
               >
                 <p className="font-serif text-2xl text-[#0E1928] italic">
-                  "Excellence isn't an act, it's a daily habit on the factory floor."
+                  {t("about.quote")}
                 </p>
               </motion.div>
             </motion.div>
@@ -75,7 +71,7 @@ export function About() {
               >
                 <div className="text-center">
                   <span className="block text-4xl lg:text-5xl font-serif text-white mb-2">60</span>
-                  <span className="block text-[10px] tracking-widest uppercase text-white/70">Years</span>
+                  <span className="block text-[10px] tracking-widest uppercase text-white/70">{t("about.badge.years")}</span>
                 </div>
               </motion.div>
             </motion.div>

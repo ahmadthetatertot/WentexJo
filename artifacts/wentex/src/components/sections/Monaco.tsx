@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n";
 
 export function Monaco() {
+  const { t } = useLanguage();
   return (
     <section id="monaco" className="relative py-32 bg-[#0E1928] overflow-hidden">
       {/* Decorative elements */}
@@ -37,7 +39,7 @@ export function Monaco() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 />
-                <span className="text-xs tracking-[0.4em] uppercase text-primary">The Flagship Label</span>
+                <span className="text-xs tracking-[0.4em] uppercase text-primary">{t("monaco.eyebrow")}</span>
               </div>
 
               <motion.h2
@@ -47,7 +49,7 @@ export function Monaco() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                MONACO
+                {t("monaco.title")}
               </motion.h2>
 
               <motion.p
@@ -57,7 +59,7 @@ export function Monaco() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                The pinnacle of Jordanian tailoring.
+                {t("monaco.subtitle")}
               </motion.p>
 
               <motion.div
@@ -67,12 +69,8 @@ export function Monaco() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
-                <p>
-                  Monaco is our crown jewel. Synonymous with prestige in the MENA market, it is the brand chosen by executives, diplomats, and those who recognize that detail is not a luxury—it is a requirement.
-                </p>
-                <p>
-                  Every Monaco shirt represents the zenith of our capabilities: the finest long-staple cottons, exacting stitch densities, and a collar architecture that remains uncompromised from dawn until dusk.
-                </p>
+                <p>{t("monaco.p1")}</p>
+                <p>{t("monaco.p2")}</p>
               </motion.div>
 
               <motion.div
@@ -86,7 +84,7 @@ export function Monaco() {
                   href="#contact"
                   className="group flex items-center gap-4 text-white hover:text-primary transition-colors w-fit"
                 >
-                  <span className="text-sm tracking-[0.2em] uppercase font-medium">Inquire about Monaco</span>
+                  <span className="text-sm tracking-[0.2em] uppercase font-medium">{t("monaco.cta")}</span>
                   <motion.div
                     className="h-[1px] bg-white/30 group-hover:bg-primary transition-colors"
                     initial={{ width: 48 }}
@@ -139,7 +137,7 @@ export function Monaco() {
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#0E1928]/80 to-transparent">
-                  <span className="text-xs tracking-[0.25em] uppercase text-white/60">Slim Fit</span>
+                  <span className="text-xs tracking-[0.25em] uppercase text-white/60">{t("monaco.card.slimfit")}</span>
                 </div>
               </motion.div>
             </div>
