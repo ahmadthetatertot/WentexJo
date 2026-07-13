@@ -22,10 +22,10 @@ export function Contact() {
       Icon: Phone,
       title: t("contact.phones.title"),
       content: (
-        <div className="space-y-2 text-[#0E1928]/55 font-light">
-          <a href="tel:+962788000095" className="block hover:text-primary transition-colors">+962 78 800 0095</a>
-          <a href="tel:+962795500756" className="block hover:text-primary transition-colors">+962 79 550 0756</a>
-          <a href="tel:+96264630526" className="block hover:text-primary transition-colors">+962 6 463 0526</a>
+        <div className="space-y-2 text-[#0E1928]/55 font-light" dir="ltr">
+          <a href="tel:+962788000095" className="block text-right hover:text-primary transition-colors">+962 78 800 0095</a>
+          <a href="tel:+962795500756" className="block text-right hover:text-primary transition-colors">+962 79 550 0756</a>
+          <a href="tel:+96264630526" className="block text-right hover:text-primary transition-colors">+962 6 463 0526</a>
         </div>
       ),
       delay: 0.3,
@@ -33,7 +33,7 @@ export function Contact() {
     {
       Icon: Printer,
       title: t("contact.fax.title"),
-      content: <p className="text-[#0E1928]/55 font-light">+962 6 465 260</p>,
+      content: <p className="text-[#0E1928]/55 font-light" dir="ltr">+962 6 465 260</p>,
       delay: 0.4,
     },
     {

@@ -212,7 +212,7 @@ export function Navbar() {
               </div>
               <a href="tel:+962788000095" className="flex items-center gap-3 text-[#0E1928]/60">
                 <Phone className="w-5 h-5" />
-                <span>+962 78 800 0095</span>
+                <span dir="ltr">+962 78 800 0095</span>
               </a>
             </div>
           </motion.div>
