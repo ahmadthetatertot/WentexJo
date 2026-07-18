@@ -24,6 +24,7 @@ export function Contact() {
       content: (
         <div className="space-y-2 text-[#0E1928]/55 font-light" dir="ltr">
           <a href="tel:+962788000095" className="block text-right hover:text-primary transition-colors">+962 78 800 0095</a>
+          <a href="tel:+9627880044000" className="block text-right hover:text-primary transition-colors">+962 7 8800 4400</a>
           <a href="tel:+962795500756" className="block text-right hover:text-primary transition-colors">+962 79 550 0756</a>
           <a href="tel:+96264630526" className="block text-right hover:text-primary transition-colors">+962 6 463 0526</a>
         </div>
@@ -33,7 +34,7 @@ export function Contact() {
     {
       Icon: Printer,
       title: t("contact.fax.title"),
-      content: <p className="text-[#0E1928]/55 font-light" dir="ltr">+962 6 465 260</p>,
+      content: <p className="text-[#0E1928]/55 font-light" dir="ltr">+962 6 465 2601</p>,
       delay: 0.4,
     },
     {
@@ -140,15 +141,26 @@ export function Contact() {
 
               <div className="mt-8 pt-8 border-t border-[#0E1928]/8 text-center">
                 <span className="block text-xs uppercase tracking-widest text-[#0E1928]/40 mb-4">{t("contact.form.orReach")}</span>
-                <a
-                  href="https://wa.me/962788000095"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 w-full py-4 bg-[#25D366]/8 text-[#25D366] text-sm tracking-widest uppercase hover:bg-[#25D366]/15 transition-colors border border-[#25D366]/25"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  {t("contact.form.whatsapp")}
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="https://wa.me/962788000095"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 flex-1 py-4 bg-[#25D366]/8 text-[#25D366] text-xs tracking-widest uppercase hover:bg-[#25D366]/15 transition-colors border border-[#25D366]/25"
+                  >
+                    <MessageCircle className="w-4 h-4 shrink-0" />
+                    <span dir="ltr">+962 78 800 0095</span>
+                  </a>
+                  <a
+                    href="https://wa.me/962795500756"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 flex-1 py-4 bg-[#25D366]/8 text-[#25D366] text-xs tracking-widest uppercase hover:bg-[#25D366]/15 transition-colors border border-[#25D366]/25"
+                  >
+                    <MessageCircle className="w-4 h-4 shrink-0" />
+                    <span dir="ltr">+962 79 550 0756</span>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
