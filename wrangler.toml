@@ -1,0 +1,9 @@
+name                   = "wentex"
+pages_build_output_dir = "artifacts/wentex/dist/public"
+
+[build]
+  command = "pnpm install --frozen-lockfile && BASE_PATH=/ pnpm --filter @workspace/wentex run build"
+
+[build.environment]
+  NODE_ENV  = "production"
+  BASE_PATH = "/"

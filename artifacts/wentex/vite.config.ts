@@ -21,7 +21,7 @@ if (!isBuild && (Number.isNaN(port) || port <= 0)) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-// BASE_PATH defaults to '/' for production (Netlify) builds
+// BASE_PATH defaults to '/' for production builds
 const basePath = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({
