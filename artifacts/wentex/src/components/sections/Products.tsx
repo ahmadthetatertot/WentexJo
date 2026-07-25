@@ -1,6 +1,4 @@
-import { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n";
 
 const products = [
@@ -11,44 +9,6 @@ const products = [
   { id: "security", titleKey: "product.security.title", descKey: "product.security.desc", image: "security.jpg" },
   { id: "casual", titleKey: "product.casual.title", descKey: "product.casual.desc", image: "casual.jpg" },
 ];
-
-function TiltCard({ children }: { children: React.ReactNode }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [6, -6]), { stiffness: 300, damping: 30 });
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-6, 6]), { stiffness: 300, damping: 30 });
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = cardRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    x.set(px);
-    y.set(py);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-    setHovered(false);
-  };
-
-  return (
-    <motion.div
-      ref={cardRef}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      whileHover={{ z: 10 }}
-      className="cursor-default"
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const containerVariants = {
   hidden: {},
@@ -120,38 +80,21 @@ export function Products() {
         >
           {products.map((product) => (
             <motion.div key={product.id} variants={itemVariants}>
-              <TiltCard>
-                <div className="group relative flex flex-col gap-5">
-                  <div className="relative aspect-[3/4] overflow-hidden bg-[#EDE8E0]">
-                    <motion.img
-                      src={`${import.meta.env.BASE_URL}images/${product.image}`}
-                      alt={t(product.titleKey)}
-                      className="w-full h-full object-cover object-center"
-                      whileHover={{ scale: 1.07 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    />
-                    <div className="absolute inset-0 bg-[#0E1928]/10 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                    <motion.div
-                      className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center"
-                      initial={{ opacity: 0, scale: 0.7 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      animate={{ opacity: 0 }}
-                      whileInView={{ opacity: 0 }}
-                    >
-                      <ArrowUpRight className="w-5 h-5 text-[#0E1928]" />
-                    </motion.div>
-                    <div className="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-y-1 group-hover:translate-y-0 transition-all duration-300">
-                      <ArrowUpRight className="w-5 h-5 text-[#0E1928]" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-serif text-[#0E1928] mb-2 group-hover:text-primary transition-colors duration-200">
-                      {t(product.titleKey)}
-                    </h3>
-                    <p className="text-sm text-[#0E1928]/50 leading-relaxed font-light">{t(product.descKey)}</p>
-                  </div>
+              <div className="flex flex-col gap-5 cursor-default">
+                <div className="relative aspect-[3/4] overflow-hidden bg-[#EDE8E0]">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/${product.image}`}
+                    alt={t(product.titleKey)}
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
-              </TiltCard>
+                <div>
+                  <h3 className="text-xl font-serif text-[#0E1928] mb-2">
+                    {t(product.titleKey)}
+                  </h3>
+                  <p className="text-sm text-[#0E1928]/50 leading-relaxed font-light">{t(product.descKey)}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
