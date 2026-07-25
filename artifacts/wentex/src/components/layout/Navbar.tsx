@@ -61,15 +61,21 @@ export function Navbar() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center group">
-            <img
-              src={logoSrc}
-              alt="Wentex"
-              className={`h-14 md:h-20 w-auto object-contain transition-all duration-300 group-hover:opacity-100 ${
+            <div
+              className={`transition-all duration-500 ${
                 isScrolled
-                  ? "opacity-90 brightness-0 saturate-0"
-                  : "brightness-0 invert opacity-90"
+                  ? "bg-transparent px-0 py-0 shadow-none border-transparent"
+                  : "bg-[#FAF8F4] px-4 py-2 shadow-md border border-[#0E1928]/10"
               }`}
-            />
+            >
+              <img
+                src={logoSrc}
+                alt="Wentex"
+                className={`h-12 md:h-16 w-auto object-contain transition-all duration-500 group-hover:opacity-100 ${
+                  isScrolled ? "opacity-80 brightness-0" : "opacity-100"
+                }`}
+              />
+            </div>
           </a>
 
           {/* Desktop Nav */}
