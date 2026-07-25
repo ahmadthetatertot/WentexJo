@@ -43,7 +43,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
       whileHover={{ z: 10 }}
-      className="cursor-pointer"
+      className="cursor-default"
     >
       {children}
     </motion.div>

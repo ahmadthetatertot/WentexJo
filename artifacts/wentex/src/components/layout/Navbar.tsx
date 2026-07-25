@@ -60,21 +60,29 @@ export function Navbar() {
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center group">
-            <div
-              className={`transition-all duration-500 ${
-                isScrolled
-                  ? "bg-transparent px-0 py-0 shadow-none border-transparent"
-                  : "bg-[#FAF8F4] px-4 py-2 shadow-md border border-[#0E1928]/10"
-              }`}
-            >
-              <img
-                src={logoSrc}
-                alt="Wentex"
-                className={`h-12 md:h-16 w-auto object-contain transition-all duration-500 group-hover:opacity-100 ${
-                  isScrolled ? "opacity-80 brightness-0" : "opacity-100"
+          <a href="#home" className="flex items-center gap-3 group select-none">
+            {/* Decorative mark */}
+            <div className="flex flex-col items-center gap-[3px]">
+              <div className={`w-[1px] h-5 transition-all duration-500 ${isScrolled ? "bg-[#0E1928]/40" : "bg-white/50"}`} />
+              <div className={`w-[5px] h-[5px] rotate-45 transition-all duration-500 ${isScrolled ? "bg-[#0E1928]" : "bg-white"}`} />
+              <div className={`w-[1px] h-5 transition-all duration-500 ${isScrolled ? "bg-[#0E1928]/40" : "bg-white/50"}`} />
+            </div>
+            {/* Wordmark */}
+            <div className="flex flex-col leading-none">
+              <span
+                className={`font-serif tracking-[0.35em] text-xl md:text-2xl uppercase transition-all duration-500 ${
+                  isScrolled ? "text-[#0E1928]" : "text-white"
+                } group-hover:opacity-80`}
+              >
+                Wentex
+              </span>
+              <span
+                className={`tracking-[0.25em] text-[9px] uppercase mt-[3px] transition-all duration-500 ${
+                  isScrolled ? "text-[#0E1928]/45" : "text-white/50"
                 }`}
-              />
+              >
+                Est. 1957
+              </span>
             </div>
           </a>
 
