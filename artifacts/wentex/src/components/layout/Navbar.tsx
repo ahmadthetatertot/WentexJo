@@ -60,12 +60,14 @@ export function Navbar() {
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <a href="#home" className="flex items-center group">
             <img
               src={logoSrc}
-              alt="Wentex Logo"
-              className={`h-10 md:h-14 object-contain transition-all duration-300 ${
-                isScrolled ? "opacity-90 group-hover:opacity-100" : "invert opacity-90 group-hover:opacity-100"
+              alt="Wentex"
+              className={`h-14 md:h-20 w-auto object-contain transition-all duration-300 group-hover:opacity-100 ${
+                isScrolled
+                  ? "opacity-90 brightness-0 saturate-0"
+                  : "brightness-0 invert opacity-90"
               }`}
             />
           </a>
