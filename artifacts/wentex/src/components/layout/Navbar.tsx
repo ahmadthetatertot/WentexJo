@@ -36,8 +36,8 @@ export function Navbar() {
 
   const navLinks = [
     { name: t("nav.home"), href: "#home" },
-    { name: t("nav.about"), href: "#about" },
     { name: t("nav.products"), href: "#products" },
+    { name: t("nav.about"), href: "#about" },
     { name: t("nav.monaco"), href: "#monaco" },
   ];
 
